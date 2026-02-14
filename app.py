@@ -7,8 +7,8 @@ from langchain_huggingface import HuggingFaceEmbeddings
 
 
 st.set_page_config(page_title="Portfolio Assistant", page_icon="💼", layout="centered")
-st.title("💼 Virtual Portfolio Assistant")
-st.caption("Powered by RAG Architecture")
+st.title("Virtual Portfolio Assistant")
+st.caption("RAG Assignment")
 
 PDF_FILE = "priya_sharma_full_profile.pdf"
 
