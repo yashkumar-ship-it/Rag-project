@@ -5,7 +5,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings
 
-# Configuration
+
 st.set_page_config(page_title="Portfolio Assistant", page_icon="💼", layout="centered")
 st.title("💼 Virtual Portfolio Assistant")
 st.caption("Powered by RAG Architecture")
@@ -24,7 +24,7 @@ def initialize_vector_store():
         loader = PyPDFLoader(PDF_FILE)
         documents = loader.load()
         
-        # Optimize chunk size for precise retrieval
+       
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=350, chunk_overlap=50)
         chunks = text_splitter.split_documents(documents)
         
@@ -43,11 +43,11 @@ def main():
         st.error("Document source not found. Please verify the PDF file exists.")
         return
 
-    # User Interface
+   
     user_query = st.chat_input("Inquire about professional background, skills, or projects...")
     
     if user_query:
-        # Retrieve the single most relevant context
+      
         results = vector_db.similarity_search(user_query, k=1)
         
         with st.chat_message("user"):
